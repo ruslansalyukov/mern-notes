@@ -6,7 +6,7 @@ export const useAuthUser = () => {
 	return useQuery({
 		queryKey: ['user'],
 		queryFn: async () => {
-			const res = await api.get('https://mern-notes-frontend-eta.vercel.app/auth/me');
+			const res = await api.get('/auth/me');
 			return res.data
 		},
 		retry: false,
