@@ -22,16 +22,10 @@ app.use(cors({
     credentials: true,
 }))
 
+app.get('/', (req, res)=>res.status(200).json({message: 'Hello world!'}))
 app.use('/api/auth', authRoutes)
 app.use('/api/notes', notesRoutes)
 
-app.use((err, req, res, next) => {
-    console.log(err)
-    res.status(500).json({
-        success: false,
-        message: 'Internal Server Error'
-    })
-})
 
 connectDB().then(() => {
     app.listen(PORT, () => {
