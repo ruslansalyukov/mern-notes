@@ -19,7 +19,7 @@ app.use(cookieParser())
 app.use(rateLimited)
 
 app.use(cors({
-    origin: 'https://mern-notes-frontend-3c7t61r5i-ruslans-projects-13a2b1b7.vercel.app/',
+    origin: 'https://mern-notes-frontend-4nzevqfxf-ruslans-projects-13a2b1b7.vercel.app/',
     origin: CLIENT_URL,
     credentials: true,
 }))
