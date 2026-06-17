@@ -43,7 +43,25 @@
 - управления серверным состоянием через TanStack Query
 - проектирования REST API
 
-## 📦 Установка
+## 📦 Установка и запуск
+
+### 📥 Клонирование репозитория
+
+```bash
+git clone <repo-url>
+cd project
+
+🚀 Запуск Backend
+
+cd backend
+npm install
+npm run dev
+
+🎨 Запуск Frontend
+
+cd frontend
+npm install
+npm run dev
 
 
 
