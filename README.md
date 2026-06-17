@@ -1,4 +1,4 @@
-![App Screenshot](./frontend/public/project/project.png)
+![App Screenshot](./assets/project.png)
 
 # 📝 Notes App (MERN Stack)
 
