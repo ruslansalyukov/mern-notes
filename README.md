@@ -1,5 +1,7 @@
 ![App Screenshot](./assets/project.png)
 
+<img src="./assets/project.png" width="500" />
+
 # 📝 Notes App (MERN Stack)
 
 Полноценное приложение для создания и управления заметками, построенное на современном стеке MERN (MongoDB, Express, React, Node.js).
