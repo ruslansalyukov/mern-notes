@@ -3,12 +3,10 @@ import api from "../api/axios";
 
 export const useAuthUser = () => {
 
-	const API_URL = import.meta.env.VITE_API_URL
-
 	return useQuery({
 		queryKey: ['user'],
 		queryFn: async () => {
-			const res = await api.get(API_URL);
+			const res = await api.get('https://mern-notes-frontend-eta.vercel.app/api/auth/me');
 			return res.data
 		},
 		retry: false,
