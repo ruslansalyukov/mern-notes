@@ -12,14 +12,17 @@ dotenv.config()
 
 const app = express();
 const PORT = process.env.PORT || 5001
+const allowedOrigins = [
+    process.env.CLIENT_URL,
+    'http://localhost:5173'
+]
 
 app.use(express.json())
 app.use(cookieParser())
 app.use(rateLimited)
 
 app.use(cors({
-    origin: 'http://localhost:5173',
-    origin: 'https://mern-notes-frontend-eta.vercel.app',
+    origin: allowedOrigins,
     credentials: true,
 }))
 

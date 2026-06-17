@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-	baseURL: 'https://mern-notes-wine.vercel.app/api',
+	baseURL: import.meta.env.VITE_API_URL,
 	// ❌ УБРАЛИ withCredentials
 });
 
