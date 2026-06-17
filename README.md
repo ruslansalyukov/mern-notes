@@ -1,5 +1,3 @@
-![App Screenshot](./assets/project.png)
-
 <img src="./assets/project.png" width="500" />
 
 # 📝 Notes App (MERN Stack)
