@@ -43,7 +43,7 @@
 - управления серверным состоянием через TanStack Query
 - проектирования REST API
 
-## 🌐 Live Demo
+## 🌐 Онлайн-версия
 
 🚀 Приложение развернуто на Vercel и доступно онлайн:
 
@@ -56,7 +56,7 @@
 ### 📥 Клонирование репозитория
 
 ```bash
-git clone <repo-url>
+git clone <https://github.com/ruslansalyukov/mern-notes.git>
 cd project
 
 🚀 Запуск Backend
