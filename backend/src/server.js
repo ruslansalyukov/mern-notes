@@ -6,7 +6,7 @@ import cookieParser from 'cookie-parser'
 import notesRoutes from './routes/notesRoutes.js'
 import authRoutes from './routes/authRoutes.js'
 import { connectDB } from './config/db.js';
-import rateLimited from './middleware/RateLimited.js';
+import rateLimitMiddleware from './middleware/rateLimit.js';
 
 dotenv.config()
 
@@ -19,15 +19,15 @@ const allowedOrigins = [
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(rateLimited)
+
 
 app.use(cors({
     origin: allowedOrigins,
     credentials: true,
 }))
 
-app.use('/api/auth', authRoutes)
-app.use('/api/notes', notesRoutes)
+app.use('/api/auth',authRoutes)
+app.use('/api/notes', rateLimitMiddleware('api'), notesRoutes)
 
 
 connectDB().then(() => {

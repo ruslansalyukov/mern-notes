@@ -1,13 +1,22 @@
-import { Ratelimit } from '@upstash/ratelimit';
-import { Redis } from '@upstash/redis'
+import { Redis } from '@upstash/redis';
+import dotenv from 'dotenv';
 
-import dotenv from 'dotenv'
-dotenv.config()
+dotenv.config();
 
+let redis = null;
 
-const ratelimit = new Ratelimit({
-    redis: Redis.fromEnv(),
-    limiter: Ratelimit.slidingWindow(50, '60 s')
-})
+if (
+  process.env.UPSTASH_REDIS_REST_URL &&
+  process.env.UPSTASH_REDIS_REST_TOKEN
+) {
+  redis = new Redis({
+    url: process.env.UPSTASH_REDIS_REST_URL,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN,
+  });
 
-export default ratelimit
+  console.log('✅ Upstash Redis connected');
+} else {
+  console.warn('⚠️ Upstash not configured — rate limit disabled');
+}
+
+export { redis };

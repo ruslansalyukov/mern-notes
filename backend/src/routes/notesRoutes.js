@@ -5,7 +5,7 @@ import { auth } from '../middleware/auth.js';
 const router = express.Router()
 
 
-router.get('/', auth, getAllNotes)
+router.get('/', auth, getAllNotes,)
 router.get('/:id', auth, getNoteById)
 router.post('/', auth, createNote)
 router.put('/:id', auth, updatedNote)
