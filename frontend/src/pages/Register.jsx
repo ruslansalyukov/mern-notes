@@ -59,7 +59,7 @@ const Register = () => {
 						<h2 className="">Back to home</h2>
 					</Link>
 				</div>
-				<form onSubmit={handleSubmit(handleRegister)} className="w-full h-full border border-white/24 p-7 rounded-4xl">
+				<form onSubmit={handleSubmit(handleRegister)} className="w-full h-full border border-white/15 p-7 rounded-4xl">
 					<div className="flex flex-col gap-5">
 						<h2 className="text-2xl logo">Create Account</h2>
 						<h2>Enter your credentials to create your account.</h2>

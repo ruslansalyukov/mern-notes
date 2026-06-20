@@ -96,7 +96,7 @@ const NoteDetails = () => {
 								name="title"
 								id="title"
 								placeholder="Note Title"
-								className="w-full rounded-lg bg-white/5 outline-0 p-2 text-neutral-400 mt-3" />
+								className="w-full rounded-lg bg-black outline-0 p-2 text-neutral-400 mt-3" />
 						</p>
 						<p>
 							<label htmlFor="content" className="text-xl">Content</label>
@@ -107,7 +107,7 @@ const NoteDetails = () => {
 								id="content"
 								maxLength={500}
 								placeholder="Note Content"
-								className="w-full rounded-lg h-20 bg-white/5 outline-0 p-2 text-neutral-400 mt-3"></textarea>
+								className="w-full rounded-lg h-20 bg-black outline-0 p-2 text-neutral-400 mt-3"></textarea>
 						</p>
 						<div className="ml-auto">
 							<button className="btn btn-soft rounded-full disabled:bg-black" disabled={saving}>

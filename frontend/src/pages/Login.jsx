@@ -54,7 +54,7 @@ const Login = () => {
 						<h2>Back to home</h2>
 					</Link>
 				</div>
-				<form onSubmit={handleSubmit(handleLogin)} className="w-full h-full border border-white/24 p-7 rounded-4xl">
+				<form onSubmit={handleSubmit(handleLogin)} className="w-full h-full border border-white/15 p-7 rounded-4xl">
 					<div className="flex flex-col gap-5">
 						<h2 className="text-2xl logo">Login</h2>
 						<h2>Enter your credentials to access your account.</h2>
