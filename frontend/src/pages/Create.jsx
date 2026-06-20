@@ -49,12 +49,12 @@ const Create = () => {
 		<motion.div initial={{ opacity: 0}} animate={{ opacity: 1}} className="py-15 px-5 md:px-10">
 			<div className="max-w-135 m-auto">
 				<div className="mb-5 w-max">
-					<Link to={'/'} className="flex items-center gap-2 btn btn-soft w-max text-black p-2 rounded-sm">
+					<Link to={'/'} className="flex items-center gap-2 btn btn-soft w-max text-black p-2 rounded-full">
 						<ArrowLeftIcon />
 						<h2>Back to notes</h2>
 					</Link>
 				</div>
-				<form onSubmit={handleSubmit} className="w-full h-full border border-white/24 p-7 rounded-2xl">
+				<form onSubmit={handleSubmit} className="w-full h-full border border-white/24 p-7 rounded-4xl">
 					<div className="flex flex-col gap-5">
 						<h2 className="text-2xl logo">Create New Note</h2>
 						<p>
@@ -66,7 +66,7 @@ const Create = () => {
 								name="title"
 								id="title"
 								placeholder="Note Title"
-								className="w-full rounded-sm bg-[#222] outline-0 p-2 text-neutral-400 mt-3" />
+								className="w-full rounded-lg bg-black outline-0 p-2 text-neutral-400 mt-3" />
 						</p>
 						<p>
 							<label htmlFor="content" className="text-xl">Content</label>
@@ -76,10 +76,10 @@ const Create = () => {
 								id="content"
 								maxLength={500}
 								placeholder="Note Content"
-								className="w-full rounded-sm h-20 bg-[#222] outline-0 p-2 text-neutral-400 mt-3"></textarea>
+								className="w-full rounded-lg h-20 bg-black outline-0 p-2 text-neutral-400 mt-3"></textarea>
 						</p>
 						<div className="ml-auto">
-							<button className="btn btn-soft disabled:bg-[#222]" disabled={loading}>
+							<button className="btn btn-soft rounded-full disabled:bg-black" disabled={loading}>
 								{loading ? "Creating..." : "Create note"}
 							</button>
 						</div>

@@ -46,15 +46,15 @@ const Login = () => {
 	}
 
 	return (
-		<div className="py-15 px-5 md:px-10 ">
+		<div className="mt-10">
 			<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-135 m-auto">
 				<div className="mb-5 w-max">
-					<Link to={'/'} className="flex items-center gap-2 btn btn-soft text-black p-2 rounded-sm">
+					<Link to={'/'} className="flex items-center gap-2 btn btn-soft text-black p-2 rounded-full">
 						<ArrowLeftIcon />
 						<h2>Back to home</h2>
 					</Link>
 				</div>
-				<form onSubmit={handleSubmit(handleLogin)} className="w-full h-full border border-white/24 p-7 rounded-2xl ">
+				<form onSubmit={handleSubmit(handleLogin)} className="w-full h-full border border-white/24 p-7 rounded-4xl">
 					<div className="flex flex-col gap-5">
 						<h2 className="text-2xl logo">Login</h2>
 						<h2>Enter your credentials to access your account.</h2>
@@ -66,7 +66,7 @@ const Login = () => {
 								id="email"
 								placeholder="Enter your email"
 								autoComplete="email"
-								className="w-full rounded-sm bg-[#222] outline-0 p-2 text-neutral-400 mt-3"
+								className="w-full rounded-lg bg-black outline-0 p-2 text-neutral-400 mt-3"
 							/>
 							{errors.email && (
 								<p className="text-red-500 text-sm mt-1">
@@ -84,7 +84,7 @@ const Login = () => {
 									id="password"
 									placeholder="Enter your password"
 									autoComplete="current-password"
-									className="w-full rounded-sm bg-[#222] outline-0 p-2 text-neutral-400 mt-3"
+									className="w-full rounded-lg bg-black outline-0 p-2 text-neutral-400 mt-3"
 
 								/>
 								<div className="absolute right-3 top-10/12 -translate-y-10/12 cursor-pointer" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <AnimatePresence mode="wait"><motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className=""><Eye /></motion.div></AnimatePresence> : <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className=""><EyeOff /></motion.div>}</div>
@@ -96,8 +96,8 @@ const Login = () => {
 							)}
 						</div>
 						<div className="flex items-center justify-between gap-3">
-							<div>Don't have an account yet? <Link to={'/register'}> Sign Up</Link></div>
-							<button type="submit" className="btn btn-soft disabled:bg-[#222]" disabled={loading}>
+							<div className="text-sm">Don't have an account yet? <Link to={'/register'} className="text-neutral-400"> Sign Up</Link></div>
+							<button className="btn btn-soft rounded-full disabled:bg-black" disabled={loading}>
 								{loading ? "Signing in..." : "Sign in"}
 							</button>
 						</div>
