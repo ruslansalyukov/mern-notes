@@ -22,7 +22,7 @@ const Navbar = () => {
 		<>
 			<header className="pt-10 sticky top-0 z-50">
 				{/* Desktop nav */}
-				<nav className="flex items-center justify-between gap-10 bg-black/50 backdrop-blur-sm p-3 rounded-full font-jakarta relative z-50">
+				<nav className="flex items-center justify-between gap-10 bg-white/4 backdrop-blur-sm p-3 rounded-full font-jakarta relative z-50">
 					<a href="/" className="logo relative ml-2">Notes</a>
 					<div className="flex items-center gap-3">
 						{user ? (<>

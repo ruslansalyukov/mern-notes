@@ -35,7 +35,7 @@
 
 	body {
 		font-family: var(--font-family);
-		background-color: rgba(0, 0, 0, 0.95);
+		background-color: rgba(0, 0, 0, 0.98);
 		color: var(--primary-color);
 	}
 }

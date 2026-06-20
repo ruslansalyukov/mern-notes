@@ -66,7 +66,7 @@ const Login = () => {
 								id="email"
 								placeholder="Enter your email"
 								autoComplete="email"
-								className="w-full rounded-lg bg-black outline-0 p-2 text-neutral-400 mt-3"
+								className="w-full rounded-lg bg-white/5 outline-0 p-2 text-neutral-400 mt-3"
 							/>
 							{errors.email && (
 								<p className="text-red-500 text-sm mt-1">
@@ -84,7 +84,7 @@ const Login = () => {
 									id="password"
 									placeholder="Enter your password"
 									autoComplete="current-password"
-									className="w-full rounded-lg bg-black outline-0 p-2 text-neutral-400 mt-3"
+									className="w-full rounded-lg bg-white/5 outline-0 p-2 text-neutral-400 mt-3"
 
 								/>
 								<div className="absolute right-3 top-10/12 -translate-y-10/12 cursor-pointer" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <AnimatePresence mode="wait"><motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className=""><Eye /></motion.div></AnimatePresence> : <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className=""><EyeOff /></motion.div>}</div>
@@ -97,7 +97,7 @@ const Login = () => {
 						</div>
 						<div className="flex items-center justify-between gap-3">
 							<div className="text-sm">Don't have an account yet? <Link to={'/register'} className="text-neutral-400"> Sign Up</Link></div>
-							<button className="btn btn-soft rounded-full disabled:bg-black" disabled={loading}>
+							<button className="btn btn-soft rounded-full disabled:bg-white/5" disabled={loading}>
 								{loading ? "Signing in..." : "Sign in"}
 							</button>
 						</div>
