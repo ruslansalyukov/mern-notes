@@ -20,7 +20,6 @@ const NoteDetails = () => {
 			try {
 				const res = await api.get(`/notes/${id}`)
 				setNote(res.data)
-				console.log(res.data)
 			} catch (error) {
 				console.log('Error fetch notes', error)
 				toast.error('Failed to fetch note')
@@ -68,7 +67,7 @@ const NoteDetails = () => {
 	if (loading) {
 		return (
 			<div className="flex items-center justify-center min-h-[80vh]">
-				<div className="">Loading...</div>
+				<div className="loader"></div>
 			</div>
 		)
 	}

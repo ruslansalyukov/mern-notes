@@ -27,9 +27,9 @@ const Navbar = () => {
 					<div className="flex items-center gap-3">
 						{user ? (<>
 							<span className="absolute left-24 top-4 w-2 h-2 bg-success rounded-full animate-pulse"></span>
-							<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="">
-								<Link to={'/create'}><button className="btn btn-soft rounded-full">Create note</button></Link>
-							</motion.div>
+							{/* <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="">
+								<Link to={'/create'}><button className="hidden md:block btn btn-soft rounded-full">Create note</button></Link>
+							</motion.div> */}
 							<motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} onClick={() => { setIsHidden(!isHidden) }} className="btn rounded-full cursor-pointer">Account</motion.button> {/* onClick={logout} */}
 						</>) : (<>
 							<div onClick={() => setIsOpen(!isOpen)} className="md:hidden z-50">
