@@ -20,93 +20,94 @@ const Navbar = () => {
 
 	return (
 		<>
-
-			<header className="pt-10 sticky top-0 z-50">
-				<div className="from-background pointer-events-none absolute inset-0 top-0 w-full  bg-linear-to-b from-black backdrop-blur-sm rounded-b-4xl"></div>
-				{/* Desktop nav */}
-				<nav className="flex items-center justify-between gap-10 bg-white/2 border border-white/5 p-3 rounded-full font-jakarta relative z-50 ">
-					<a href="/" className="logo relative ml-2">Notes</a>
-					<div className="flex items-center gap-3">
-						{user ? (<>
-							<span className="absolute left-24 top-4 w-2 h-2 bg-success rounded-full animate-pulse"></span>
-							{/* <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="">
+			<div className="sticky top-0 z-50 pt-10">
+				<div className="from-background pointer-events-none absolute inset-0 w-full bg-linear-to-b from-black backdrop-blur-sm rounded-b-4xl"></div>
+				<header className="">
+					{/* Desktop nav */}
+					<nav className="flex items-center justify-between gap-10 bg-white/2 border border-white/5 p-3 rounded-full font-jakarta relative z-50 ">
+						<a href="/" className="logo relative ml-2">Notes</a>
+						<div className="flex items-center gap-3">
+							{user ? (<>
+								<span className="absolute left-24 top-4 w-2 h-2 bg-success rounded-full animate-pulse"></span>
+								{/* <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="">
 								<Link to={'/create'}><button className="hidden md:block btn btn-soft rounded-full">Create note</button></Link>
 							</motion.div> */}
-							<motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} onClick={() => { setIsHidden(!isHidden) }} className="btn rounded-full cursor-pointer">Account</motion.button> {/* onClick={logout} */}
-						</>) : (<>
-							<div onClick={() => setIsOpen(!isOpen)} className="md:hidden z-50">
-								<div className="mr-2">{isOpen ? <X /> : <TextAlignJustify />}</div>
-							</div>
-							<div className="hidden md:flex items-center gap-7">
-								<Link to={'/login'}><motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="cursor-pointer">Sign In</motion.button></Link>
-								<Link to={'/register'}><motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="btn btn-soft rounded-full">Get Started</motion.button></Link>
-							</div>
-						</>)}
+								<motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} onClick={() => { setIsHidden(!isHidden) }} className="btn rounded-full cursor-pointer">Account</motion.button> {/* onClick={logout} */}
+							</>) : (<>
+								<div onClick={() => setIsOpen(!isOpen)} className="md:hidden z-50">
+									<div className="mr-2">{isOpen ? <X /> : <TextAlignJustify />}</div>
+								</div>
+								<div className="hidden md:flex items-center gap-7">
+									<Link to={'/login'}><motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="cursor-pointer">Sign In</motion.button></Link>
+									<Link to={'/register'}><motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="btn btn-soft rounded-full">Get Started</motion.button></Link>
+								</div>
+							</>)}
 
-					</div>
-				</nav>
+						</div>
+					</nav>
 
-				{/* Account toggle */}
-				{user &&
+					{/* Account toggle */}
+					{user &&
+						<AnimatePresence>
+							{isHidden &&
+								<>	<motion.div
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									exit={{ opacity: 0 }}
+									onClick={closeMenu}
+									className="fixed inset-0 bg-[#222]/24 backdrop-blur-sm"
+								/>
+									<motion.div
+										initial={{ opacity: 0, x: 50 }}
+										animate={{ opacity: 1, x: 0 }}
+										exit={{ opacity: 0, x: 50 }}
+										transition={{ duration: 0.4, ease: 'easeOut' }}
+										className="absolute top-30 right-4 z-50 w-50 rounded-2xl border border-white/10 bg-black/10 backdrop-blur-sm shadow-xl flex flex-col items-center justify-center gap-3 py-6 px-4 "
+									>
+										<h2 className="text-neutral-300 text-sm">{maskEmail(user?.email)}</h2>
+										<div className="flex items-center gap-3">
+											<IconlyLogin />
+											<h2 onClick={logout} className="text-red-400 cursor-pointer">Log Out</h2>
+										</div>
+									</motion.div>
+								</>
+							}
+						</AnimatePresence>
+					}
+					{/* Mobile nav */}
 					<AnimatePresence>
-						{isHidden &&
-							<>	<motion.div
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								exit={{ opacity: 0 }}
-								onClick={closeMenu}
-								className="fixed inset-0 bg-[#222]/24 backdrop-blur-sm"
-							/>
-								<motion.div
-									initial={{ opacity: 0, x: 50 }}
-									animate={{ opacity: 1, x: 0 }}
-									exit={{ opacity: 0, x: 50 }}
-									transition={{ duration: 0.4, ease: 'easeOut' }}
-									className="absolute top-30 right-4 z-50 w-50 rounded-2xl border border-white/10 bg-black/10 backdrop-blur-sm shadow-xl flex flex-col items-center justify-center gap-3 py-6 px-4 "
-								>
-									<h2 className="text-neutral-300 text-sm">{maskEmail(user?.email)}</h2>
-									<div className="flex items-center gap-3">
-										<IconlyLogin />
-										<h2 onClick={logout} className="text-red-400 cursor-pointer">Log Out</h2>
-									</div>
-								</motion.div>
-							</>
-						}
-					</AnimatePresence>
-				}
-				{/* Mobile nav */}
-				<AnimatePresence>
-					{isOpen && (
-						<>
-							{/* overlay (затемнение + blur фона) */}
-							{/* <motion.div
+						{isOpen && (
+							<>
+								{/* overlay (затемнение + blur фона) */}
+								{/* <motion.div
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
 								onClick={closeMenu}
 								className="fixed inset-0 bg-[#222]/24 backdrop-blur-sm"
 							/> */}
-							{/* glass menu */}
-							<motion.div
-								initial={{ opacity: 0, y: -15, x: 20, scaleX: 0.7 }}
-								animate={{ opacity: 1, y: 0, x: 0, scaleX: 1 }}
-								exit={{ opacity: 0, y: -25, x: 30, scaleX: 0.7 }}
-								transition={{ duration: 0.18 }}
-								className="absolute top-28 right-4 z-50 w-50 rounded-2xl border border-white/10 bg-black/10 backdrop-blur-sm shadow-xl flex flex-col items-center gap-3 py-6 px-4 "
-							>
-								<Link to="/login" onClick={closeMenu}>
-									<button className="text-white cursor-pointer">Sign In</button>
-								</Link>
-								<Link to="/register" onClick={closeMenu}>
-									<button className="btn rounded-full">
-										Get Started
-									</button>
-								</Link>
-							</motion.div>
-						</>
-					)}
-				</AnimatePresence>
-			</header>
+								{/* glass menu */}
+								<motion.div
+									initial={{ opacity: 0, y: -15, x: 20, scaleX: 0.7 }}
+									animate={{ opacity: 1, y: 0, x: 0, scaleX: 1 }}
+									exit={{ opacity: 0, y: -25, x: 30, scaleX: 0.7 }}
+									transition={{ duration: 0.18 }}
+									className="absolute top-28 right-4 z-50 w-50 rounded-2xl border border-white/10 bg-black/10 backdrop-blur-sm shadow-xl flex flex-col items-center gap-3 py-6 px-4 "
+								>
+									<Link to="/login" onClick={closeMenu}>
+										<button className="text-white cursor-pointer">Sign In</button>
+									</Link>
+									<Link to="/register" onClick={closeMenu}>
+										<button className="btn rounded-full">
+											Get Started
+										</button>
+									</Link>
+								</motion.div>
+							</>
+						)}
+					</AnimatePresence>
+				</header>
+			</div>
 		</>
 	);
 }
