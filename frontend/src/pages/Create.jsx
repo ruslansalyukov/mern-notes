@@ -54,7 +54,7 @@ const Create = () => {
 						<h2>Back to notes</h2>
 					</Link>
 				</div>
-				<form onSubmit={handleSubmit} className="w-full h-full border border-white/24 p-7 rounded-4xl">
+				<form onSubmit={handleSubmit} className="w-full h-full border border-white/15 p-7 rounded-4xl">
 					<div className="flex flex-col gap-5">
 						<h2 className="text-2xl logo">Create New Note</h2>
 						<p>
@@ -79,7 +79,7 @@ const Create = () => {
 								className="w-full rounded-lg h-20 bg-white/5 outline-0 p-2 text-neutral-400 mt-3"></textarea>
 						</p>
 						<div className="ml-auto">
-							<button className="btn btn-soft rounded-full disabled:bg-white/5" disabled={loading}>
+							<button className="btn btn-soft rounded-full outline-none border-none disabled:bg-white/5" disabled={loading}>
 								{loading ? "Creating..." : "Create note"}
 							</button>
 						</div>

@@ -59,7 +59,7 @@ const Home = () => {
 						<>
 							<div className="sticky top-35 z-10 flex items-center justify-between">
 								<div className=""></div>
-								<Link to={'/create'}><div className="bg-white backdrop-blur-sm text-black p-3 cursor-pointer rounded-full flex items-center justify-center"><PlusIcon /></div></Link>
+								<Link to={'/create'}><div className="bg-white backdrop-blur-sm text-black p-3 cursor-pointer rounded-full flex items-center justify-center"><PlusIcon/></div></Link>
 							</div>
 							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 relative ">
 								{notes.map((note) => (

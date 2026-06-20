@@ -80,7 +80,7 @@ const NoteDetails = () => {
 						<ArrowLeftIcon />
 						Back to notes
 					</Link>
-					<motion.div whileHover={{ scale: 1.2 }} className="flex items-center gap-2 border border-white/24 p-2 rounded-full cursor-pointer" onClick={handleDelete}>
+					<motion.div whileHover={{ scale: 1.2 }} className="flex items-center gap-2 border border-white/15 p-2 rounded-full cursor-pointer" onClick={handleDelete}>
 						<IconlyDelete />
 					</motion.div>
 				</div>
@@ -110,7 +110,7 @@ const NoteDetails = () => {
 								className="w-full rounded-lg h-20 bg-white/5 outline-0 p-2 text-neutral-400 mt-3"></textarea>
 						</p>
 						<div className="ml-auto">
-							<button className="btn btn-soft rounded-full disabled:bg-white/5" disabled={saving}>
+							<button className="btn btn-soft rounded-full outline-none border-none disabled:bg-white/5" disabled={saving}>
 								{saving ? "Saving..." : "Save note"}
 							</button>
 						</div>

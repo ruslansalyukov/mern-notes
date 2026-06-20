@@ -60,7 +60,7 @@ const Navbar = () => {
 									animate={{ opacity: 1, x: 0 }}
 									exit={{ opacity: 0, x: 50 }}
 									transition={{ duration: 0.4, ease: 'easeOut' }}
-									className="absolute top-28 right-4 z-50 w-50 rounded-2xl border border-white/10 bg-black/10 backdrop-blur-sm shadow-xl flex flex-col items-center justify-center gap-3 py-6 px-4 "
+									className="absolute top-30 right-4 z-50 w-50 rounded-2xl border border-white/10 bg-black/10 backdrop-blur-sm shadow-xl flex flex-col items-center justify-center gap-3 py-6 px-4 "
 								>
 									<h2 className="text-neutral-300 text-sm">{maskEmail(user?.email)}</h2>
 									<div className="flex items-center gap-3">
