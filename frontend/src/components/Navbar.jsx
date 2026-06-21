@@ -20,11 +20,9 @@ const Navbar = () => {
 
 	return (
 		<>
-
-			<header className="sticky top-0 z-50">
-				<div className="from-background pointer-events-none absolute inset-0 w-full bg-linear-to-b from-black backdrop-blur-sm rounded-b-4xl"></div>
+			<header className="pt-10 sticky top-0 z-50">
 				{/* Desktop nav */}
-				<nav className="flex items-center justify-between gap-10 bg-white/2 border border-white/5 p-3 rounded-full font-jakarta relative z-50 ">
+				<nav className="flex items-center justify-between gap-10 bg-white/2 border border-white/5 backdrop-blur-sm p-3 rounded-full font-jakarta relative z-50">
 					<a href="/" className="logo relative ml-2">Notes</a>
 					<div className="flex items-center gap-3">
 						{user ? (<>
