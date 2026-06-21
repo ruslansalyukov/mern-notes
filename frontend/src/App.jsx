@@ -17,7 +17,7 @@ function App() {
 	return (
 
 		<div>
-			<div className="container min-h-screen">
+			<div className="container">
 				<Navbar />
 				<Routes>
 					<Route path="/" element={
