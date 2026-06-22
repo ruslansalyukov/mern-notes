@@ -79,7 +79,7 @@ const Create = () => {
 								className="w-full rounded-lg h-20 bg-white/5 outline-0 p-2 text-neutral-400 mt-3"></textarea>
 						</p>
 						<div className="ml-auto">
-							<button className="btn btn-soft rounded-full outline-none border-none disabled:bg-white/5" disabled={loading}>
+							<button type="submit" className="btn btn-soft rounded-full outline-none border-none disabled:bg-white/5" disabled={loading}>
 								{loading ? "Creating..." : "Create note"}
 							</button>
 						</div>

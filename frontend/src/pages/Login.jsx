@@ -97,7 +97,7 @@ const Login = () => {
 						</div>
 						<div className="flex items-center justify-between gap-3">
 							<div className="text-sm">Don't have an account yet? <Link to={'/register'} className="text-neutral-400"> Sign Up</Link></div>
-							<button className="btn btn-soft rounded-full outline-none border-none disabled:bg-white/5" disabled={loading}>
+							<button type="submit" className="btn btn-soft rounded-full outline-none border-none disabled:bg-white/5" disabled={loading}>
 								{loading ? "Signing in..." : "Sign in"}
 							</button>
 						</div>

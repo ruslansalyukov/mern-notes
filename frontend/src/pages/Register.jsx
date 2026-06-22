@@ -102,7 +102,7 @@ const Register = () => {
 						</div>
 						<div className="flex items-center justify-between gap-3">
 							<div className="text-sm">Already have an account? <Link to={'/login'} className="text-neutral-400"> Sign In</Link></div>
-							<button className="btn btn-soft rounded-full outline-none border-none disabled:bg-white/5" disabled={loading}>
+							<button type="submit" className="btn btn-soft rounded-full outline-none border-none disabled:bg-white/5" disabled={loading}>
 								{loading ? "Signing up..." : "Sign up"}
 							</button>
 						</div>
