@@ -12,7 +12,7 @@ const NotesNotFound = () => {
 				<div className="text-2xl">
 					The note list is empty. Create your first note now.
 				</div>
-				<Link to={'/create'}><button className="btn btn-soft">Create Note</button></Link>
+				<Link to={'/create'}><button type="button" className="btn btn-soft rounded-full">Create Note</button></Link>
 			</div>
 		</motion.div>
 	);
